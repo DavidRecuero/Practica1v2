@@ -7,11 +7,20 @@
 
 Map::Map(const int &difficulty)
 {
-	sizex = difficulty * rand() % 6 + 5;
+	sizex = difficulty * (rand() % 6 + 5);
+	sizey = difficulty * (rand() % 6 + 5);
+
 	map = new char*[sizex];
 
 	for (int c = 0; c < sizex;c++) {
 		map[c] = new char[sizey];
+	}
+
+	for (int c = 0; c < sizex;c++) {
+		for (int i = 0; i < sizey;i++) {
+			map[c][i] = '.';
+		}
+		
 	}
 
 }
@@ -30,6 +39,7 @@ void Map::printer() {
 		for (int i = 0; i < sizey; i++) {
 			std::cout << map[c][i];
 		}
+		std::cout << std::endl;
 	}
 
 

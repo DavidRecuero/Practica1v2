@@ -44,7 +44,7 @@ class Coinmanager {
 public:
 	int coinnum;
 
-	const int coinproportion = 10; // proporcio de monedes segons la grandaria del mapa ( 100/3 , 100/13)
+	int coinproportion; // proporcio de monedes segons la grandaria del mapa ( 100/3 , 100/13)
 
 	Coinmanager(int coinproportion, Map mapa);
 
