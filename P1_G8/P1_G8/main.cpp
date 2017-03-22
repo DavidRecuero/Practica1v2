@@ -1,6 +1,8 @@
 
 #include "Input.h"
-#include "objects.h"
+#include "Map.h"
+#include "CoinManager.h"
+#include "Player.h"
 
 
 
