@@ -1,0 +1,5 @@
+#include <iostream>
+
+do{ std::cout << "Select difficulty |1, 2, 3|" << std::endl;
+    std::cin << difficulty;
+}while(difficulty < 1 || difficulty > 3);
