@@ -1,4 +1,6 @@
 #pragma once
+#include "Map.h"
+#include "Player.h"
 
 class CoinManager {
 
@@ -6,9 +8,11 @@ public:
 	int coinnum;
 		
 
-	CoinManager(int coinproportion, Map mapa);
+	CoinManager(Map mapa);
 
 
-	void coinputter(Map);
+	void coinsetter(Map);
+	
+	void scoreCounter(Player jugador, int score,Map mapa);
 
 };
