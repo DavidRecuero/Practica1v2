@@ -6,7 +6,7 @@
 
 CoinManager::CoinManager(Map mapa) {
 
-	coinnum = int(mapa.sizex*mapa.sizey * float(rand() % 100) / 1000.f + 0.03f);
+	coinnum = int(mapa.sizex*mapa.sizey * float(rand() % 13 + 3) / 100.f);
 	coinsetter(mapa);
 		
 }

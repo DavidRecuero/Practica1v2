@@ -41,7 +41,7 @@ void Map::printer() {
 		}
 		std::cout << std::endl;
 	}
-
+//
 
 }
 
