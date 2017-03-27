@@ -68,7 +68,7 @@ void Player::scoreCounter() {
 	}
 
 	if (coinmanager.coinnum == 0) {
-		coinmanager.coinnum = int(mapa.sizex*mapa.sizey * float(rand() % 13 + 3) / 100.f);
+		coinmanager.coinnum = int(map.sizex*map.sizey * float(rand() % 13 + 3) / 100.f);
 		coinmanager.coinsetter();
 	}
 
