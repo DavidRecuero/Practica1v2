@@ -25,27 +25,27 @@ bool Player::movement() {
 
 		case 'a':
 		case 'A':
-			if (y < 0) {
-			}
-			else { y--;}	break;
+			if (y > 0)
+				y--;	
+			break;
 
 		case 'd':
 		case 'D':
-			if (y > map.sizey) {
-			}
-			else { y++; }	break;
+			if (y + 1 < map.sizey) 
+				y++;
+			break;
 
 		case 'w':
 		case 'W':
-			if (x < 0) {
-			}
-			else { x--; }	break;
+			if (x > 0)
+				x--;	
+			break;
 
 		case 's':
 		case 'S':
-			if (x > map.sizex) {
-			}
-			else { x++; }	break;
+			if (x + 1 < map.sizex)
+				x++;
+			break;
 
 			return true;
 		}
@@ -62,14 +62,16 @@ bool Player::movement() {
 
 void Player::scoreCounter() {
 
-	if (map.map[x][y] != '.') {
-		puntuacio++;
-		coinmanager.coinnum--;
-	}
-
 	if (coinmanager.coinnum == 0) {
 		coinmanager.coinnum = int(map.sizex*map.sizey * float(rand() % 13 + 3) / 100.f);
 		coinmanager.coinsetter();
 	}
+
+	if (map.map[x][y] == '$') {
+		puntuacio++;
+		coinmanager.coinnum--;
+	}
+
+
 
 }
