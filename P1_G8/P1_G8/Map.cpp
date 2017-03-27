@@ -36,8 +36,9 @@ void Map::printer() {
 	system("cls");
 
 	for (int c = 0; c < sizex; c++) {
+		std::cout << "   ";
 		for (int i = 0; i < sizey; i++) {
-			std::cout << map[c][i];
+			std::cout << " " << map[c][i] << " ";
 		}
 		std::cout << std::endl;
 	}
