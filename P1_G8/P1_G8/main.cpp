@@ -57,6 +57,7 @@ int main(void) {
 				std::cout << senyor.puntuacio << "/" << scoreToWin << std::endl;
 			}
 	};
+	
 
 	std::cout << "Congrats!, you have taken " << (clock() - start)/1000 << " seconds and earn " << scoreToWin << " points"; //entre 1000 per pasar-ho a segons.
 

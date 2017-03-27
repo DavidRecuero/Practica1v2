@@ -51,6 +51,17 @@ void Map::printer() {
 
 }
 
+Map::~Map() {
+
+	for (int c = 0; c < sizex; c++) {
+		delete[] map[c];
+		map[c] = nullptr;
+	}
+	delete[] map;
+	map = nullptr;
+
+}
+
 
 
 

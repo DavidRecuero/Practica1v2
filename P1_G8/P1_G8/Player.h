@@ -8,20 +8,22 @@ class Map;
 
 class Player {
 
+private:
+
+	Map& map; // referencia a Map
+	CoinManager &coinmanager; // referencia a CoinManager
+
 public:
+	int x, y; // posició x i y del jugador
 
-	Map& map;
-	CoinManager &coinmanager;
+	int puntuacio; // numero de monedes recollides pel jugador
 
-	int x, y;
+	Player(Map &mapa, CoinManager &manejador); // constructor
 
-	int puntuacio;
-
-	Player(Map &mapa, CoinManager &manejador);
 
 	bool  movement();
 
-	void scoreadd();
+
 
 	void scoreCounter();
 };
