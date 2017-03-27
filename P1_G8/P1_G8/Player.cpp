@@ -25,29 +25,25 @@ bool Player::movement() {
 
 		case 'a':
 		case 'A':
-			if (y == 0) {
-				y == map.sizey;
+			if (y < 0) {
 			}
 			else { y--;}	break;
 
 		case 'd':
 		case 'D':
-			if (y == map.sizey) {
-				y == 0;
+			if (y > map.sizey) {
 			}
 			else { y++; }	break;
 
 		case 'w':
 		case 'W':
-			if (x == 0) {
-				x == map.sizey;
+			if (x < 0) {
 			}
 			else { x--; }	break;
 
 		case 's':
 		case 'S':
-			if (x == map.sizex) {
-				x == 0;
+			if (x > map.sizex) {
 			}
 			else { x++; }	break;
 
@@ -72,7 +68,7 @@ void Player::scoreCounter() {
 	}
 
 	if (coinmanager.coinnum == 0) {
-		coinmanager.coinnum = map.sizex*map.sizey * int(float(rand() % 100) / 1000.f + 0.03f);
+		coinmanager.coinnum = int(mapa.sizex*mapa.sizey * float(rand() % 13 + 3) / 100.f);
 		coinmanager.coinsetter();
 	}
 
