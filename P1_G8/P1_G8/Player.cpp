@@ -25,30 +25,34 @@ bool Player::movement() {
 
 		case 'a':
 		case 'A':
-			if (y > 0)
-				y--;	
+			if (y > 0) {
+				y--;
+			}
 			break;
 
 		case 'd':
 		case 'D':
-			if (y + 1 < map.sizey) 
+			if (y + 1 < map.sizey) {
 				y++;
+			}
 			break;
 
 		case 'w':
 		case 'W':
-			if (x > 0)
-				x--;	
+			if (x > 0) {
+				x--;
+			}
 			break;
 
 		case 's':
 		case 'S':
-			if (x + 1 < map.sizex)
+			if (x + 1 < map.sizex) {
 				x++;
+			}
 			break;
-
-			return true;
+					
 		}
+		return true;
 	}
 	else {
 		return false;

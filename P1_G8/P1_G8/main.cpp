@@ -13,7 +13,7 @@ int main(void) {
 	srand(time(nullptr));
 
 	int difficulty;
-	int scoreToWin = 10;
+	int scoreToWin = 80;
 	
 	clock_t start;
 	
