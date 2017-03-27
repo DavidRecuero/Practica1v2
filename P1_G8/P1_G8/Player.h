@@ -1,18 +1,27 @@
 #pragma once
 
 #include "Map.h"
+#include "CoinManager.h"
+
+class CoinManager;
+class Map;
 
 class Player {
 
 public:
 
+	Map& map;
+	CoinManager &coinmanager;
+
 	int x, y;
 
 	int puntuacio;
 
-	Player(Map mapa);
+	Player(Map &mapa, CoinManager &manejador);
 
-	void  movement(Map mapa);
+	bool  movement();
+
+	void scoreadd();
 
 
 };

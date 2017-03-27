@@ -17,7 +17,7 @@ int main(void) {
 
 	int difficulty;
 	int scoreToWin = 10;
-	int score = 0;
+	
 	int temps = 1;
 
 	
@@ -34,40 +34,26 @@ int main(void) {
 	
 	Map mapa1(difficulty);
 
-	CoinManager manejador(mapa1);
+	CoinManager manejador(mapa1,*senyor);
 
-	Player senyor(mapa1);
+	
 
-	mapa1.printer();
+	senyor = new Player(mapa1,manejador);
 
-	/*std::cout << manejador.coinnum << std::endl;
-	std::cout << mapa1.sizex*mapa1.sizey << std::endl;
-	*/
+	mapa1.printer(scoreToWin);
 
-	std::cout << "    ---------------" << std::endl;
-	std::cout << "    || COIN RACE ||" << std::endl;
-	std::cout << "    ---------------" << std::endl << std::endl;
-	std::cout << "    ||W - up  ||S - down ||" << std::endl;
-	std::cout << "    ||A - left||D - right||" << std::endl;
+	
 
-	senyor.movement(mapa1);
-	manejador.scoreCounter(senyor, score, mapa1);
-	mapa1.printer();
+	while(senyor*.puntuacio < scoreToWin) {
+					
+			
+			if (senyor*.movement(mapa1, manejador, scoreToWin)) {
+				manejador.scoreCounter();
 
-	while(score < scoreToWin) {
-		//if (keypressed) {
-			std::cout << "    ---------------" << std::endl;
-			std::cout << "    || COIN RACE ||" << std::endl;
-			std::cout << "    ---------------" << std::endl << std::endl;
-			std::cout << "    ||W - up  ||S - down ||" << std::endl;
-			std::cout << "    ||A - left||D - right||" << std::endl;
+				mapa1.cellModify(senyor*.x, senyor*.y, '@');
 
-			senyor.movement(mapa1);
-			manejador.scoreCounter(senyor, score, mapa1);
-			mapa1.printer();
-
-			std::cout << score << "/" << scoreToWin << std::endl;
-		//}
+				mapa1.printer(scoreToWin);
+			}
 	};
 
 	std::cout << "Congrats!, you have taken " << temps;

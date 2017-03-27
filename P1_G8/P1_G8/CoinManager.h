@@ -2,17 +2,22 @@
 #include "Map.h"
 #include "Player.h"
 
-class CoinManager {
+class Player;
+class Map;
 
+class CoinManager {
+private:
+	Map &map;
+	Player &jugador;
 public:
 	int coinnum;
 		
 
-	CoinManager(Map mapa);
+	CoinManager(Map &mapa, Player &jugadore);
 
 
-	void coinsetter(Map);
+	void coinsetter();
 	
-	void scoreCounter(Player jugador, int score,Map mapa);
+	void scoreCounter();
 
 };

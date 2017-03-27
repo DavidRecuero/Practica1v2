@@ -5,7 +5,7 @@
 #include <conio.h>
 
 
-Map::Map(const int &difficulty)
+Map::Map(int difficulty, Player player) : 
 {
 	sizex = difficulty * (rand() % 6 + 5);
 	sizey = difficulty * (rand() % 6 + 5);
@@ -26,14 +26,20 @@ Map::Map(const int &difficulty)
 }
 void Map::cellModify(const int &line, const int &row, const char &newelement) {
 
-	map[line][row] = newelement;
+map[line][row] = newelement;
 
 
 }
 
-void Map::printer() {
+void Map::printer(int scoreToWin) {
 
 	system("cls");
+
+	std::cout << "    ---------------" << std::endl;
+	std::cout << "    || COIN RACE ||" << std::endl;
+	std::cout << "    ---------------" << std::endl << std::endl;
+	std::cout << "    ||W - up  ||S - down ||" << std::endl;
+	std::cout << "    ||A - left||D - right||" << std::endl << std::endl << std::endl;
 
 	for (int c = 0; c < sizex; c++) {
 		std::cout << "   ";
@@ -42,7 +48,8 @@ void Map::printer() {
 		}
 		std::cout << std::endl;
 	}
-//
+	std::cout << std::endl << std::endl;
+	std::cout << jugador.puntuacio << "/" << scoreToWin << std::endl;
 
 }
 

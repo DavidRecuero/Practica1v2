@@ -1,7 +1,11 @@
 #include "Player.h"
 #include "stdlib.h"
+#include "CoinManager.h"
 
-Player::Player(Map mapa) {
+Player::Player(Map &mapa, CoinManager &manejador) : map (mapa), coinmanager(manejador) {
+	
+	puntuacio = 0;
+	
 	do {
 		x = rand() % mapa.sizex;
 		y = rand() % mapa.sizey;
@@ -11,12 +15,12 @@ Player::Player(Map mapa) {
 	mapa.cellModify(x, y, '@');
 
 }
-void Player::movement(Map mapa) {
+bool Player::movement() {
 
 	char entrada;
 	if (_kbhit()) {
 		entrada = _getch();
-		mapa.cellModify(x, y, '.');
+		map.cellModify(x, y, '.');
 		switch (entrada) {
 
 		case 'a':
@@ -31,8 +35,21 @@ void Player::movement(Map mapa) {
 		case 's':
 		case 'S':
 			x++;	break;
+
+			return true;
 		}
-		mapa.cellModify(x, y, '@');
 	}
+	else {
+		return false;
+	}
+		
+	
 
 }
+
+void Player::scoreadd() {
+
+	puntuacio++;
+}
+
+void Player::scoreCounter
