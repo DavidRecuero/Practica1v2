@@ -7,7 +7,7 @@
 CoinManager::CoinManager(Map &mapa, Player &jugadore) : map (mapa), jugador(jugadore) {
 
 	coinnum = int(mapa.sizex*mapa.sizey * float(rand() % 13 + 3) / 100.f);
-	coinsetter(mapa);
+	coinsetter();
 		
 }
 

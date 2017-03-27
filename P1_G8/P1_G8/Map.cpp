@@ -35,9 +35,9 @@ void Map::printer(int scoreToWin) {
 
 	system("cls");
 
-	std::cout << "    ---------------" << std::endl;
-	std::cout << "    || COIN RACE ||" << std::endl;
-	std::cout << "    ---------------" << std::endl << std::endl;
+	std::cout << "        ---------------" << std::endl;
+	std::cout << "        || COIN RACE ||" << std::endl;
+	std::cout << "        ---------------" << std::endl << std::endl;
 	std::cout << "    ||W - up  ||S - down ||" << std::endl;
 	std::cout << "    ||A - left||D - right||" << std::endl << std::endl << std::endl;
 
