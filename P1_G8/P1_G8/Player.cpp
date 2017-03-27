@@ -1,15 +1,18 @@
 #include "Player.h"
 #include "stdlib.h"
 
-Player::Player(Map mapa, int spawnrange) {
+Player::Player(Map mapa) {
 	do {
-		x = (mapa.sizex / 2) + rand() % mapa.sizex / spawnrange - mapa.sizex / 2 * spawnrange;
-		y = (mapa.sizey / 2) + rand() % mapa.sizey / spawnrange - mapa.sizey / 2 * spawnrange;
+		x = rand() % mapa.sizex;
+		y = rand() % mapa.sizey;
 	} while (mapa.map[x][y] == '$');
+
+
 	mapa.cellModify(x, y, '@');
 
 }
 void Player::movement(Map mapa) {
+
 	char entrada;
 	if (_kbhit()) {
 		entrada = _getch();

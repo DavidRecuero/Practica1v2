@@ -32,11 +32,11 @@ int main(void) {
 	} while(difficulty < 1 || difficulty > 3);
 	
 	
-	Map mapa1(2);
+	Map mapa1(difficulty);
 
 	CoinManager manejador(mapa1);
 
-	Player senyor(mapa1, difficulty);
+	Player senyor(mapa1);
 
 	mapa1.printer();
 

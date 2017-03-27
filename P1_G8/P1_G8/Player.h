@@ -10,7 +10,7 @@ public:
 
 	int puntuacio;
 
-	Player(Map mapa, int spawnrange);
+	Player(Map mapa);
 
 	void  movement(Map mapa);
 
