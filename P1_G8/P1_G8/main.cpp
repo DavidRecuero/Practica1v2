@@ -51,6 +51,10 @@ int main(void) {
 				mapa1.cellModify(senyor*.x, senyor*.y, '@');
 
 				mapa1.printer(scoreToWin);
+
+
+				std::cout << std::endl << std::endl;
+				std::cout << senyor*.puntuacio << "/" << scoreToWin << std::endl;
 			}
 	};
 

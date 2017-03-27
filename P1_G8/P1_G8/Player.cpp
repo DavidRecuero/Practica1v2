@@ -69,8 +69,8 @@ void Player::scoreadd() {
 
 void Player::scoreCounter(Map &mapa, CoinManager &manejador, int coinnum) {
 
-	if (mapa.map[jugador.x][jugador.y] == '$') {
-		jugador.puntuacio++;
+	if (mapa.map[x][y] == '$') {
+		puntuacio++;
 		coinnum--;
 	}
 

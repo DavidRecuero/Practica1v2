@@ -5,7 +5,7 @@
 #include <conio.h>
 
 
-Map::Map(int difficulty, Player player) : 
+Map::Map(int difficulty, Player player)
 {
 	sizex = difficulty * (rand() % 6 + 5);
 	sizey = difficulty * (rand() % 6 + 5);
@@ -48,8 +48,6 @@ void Map::printer(int scoreToWin) {
 		}
 		std::cout << std::endl;
 	}
-	std::cout << std::endl << std::endl;
-	std::cout << jugador.puntuacio << "/" << scoreToWin << std::endl;
 
 }
 
