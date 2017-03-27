@@ -5,7 +5,7 @@
 #include <conio.h>
 
 
-Map::Map(int difficulty, Player player)
+Map::Map(int difficulty)
 {
 	sizex = difficulty * (rand() % 6 + 5);
 	sizey = difficulty * (rand() % 6 + 5);
@@ -31,7 +31,7 @@ map[line][row] = newelement;
 
 }
 
-void Map::printer(int scoreToWin) {
+void Map::printer() {
 
 	system("cls");
 

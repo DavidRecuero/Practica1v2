@@ -4,7 +4,7 @@
 #include "Player.h"
 
 
-CoinManager::CoinManager(Map &mapa, Player &jugadore) : map (mapa), jugador(jugadore) {
+CoinManager::CoinManager(Map &mapa) : map (mapa){
 
 	coinnum = int(mapa.sizex*mapa.sizey * float(rand() % 13 + 3) / 100.f);
 	coinsetter();
@@ -25,18 +25,5 @@ void CoinManager::coinsetter() {
 	}
 }
 
-
-void CoinManager::scoreCounter() {
-
-		if (map.map[jugador.x][jugador.y] == '$') {
-			jugador.puntuacio++;
-			coinnum--;
-		}
-
-		if (coinnum == 0) {
-			coinnum = map.sizex*map.sizey * int(float(rand() % 100) / 1000.f + 0.03f);
-			coinsetter();
-		}
-	}
 
 

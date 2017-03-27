@@ -19,9 +19,9 @@ public:
 
 	Player(Map &mapa, CoinManager &manejador);
 
-	bool  movement(Map &mapa);
+	bool  movement();
 
 	void scoreadd();
 
-	void Player::scoreCounter(Map &mapa, CoinManager &manejador, int coinnum);
+	void scoreCounter();
 };

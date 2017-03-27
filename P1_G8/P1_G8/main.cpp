@@ -30,31 +30,31 @@ int main(void) {
 	} while(difficulty < 1 || difficulty > 3);
 	
 	
-	Map mapa1(difficulty, *senyor);
+	Map mapa1(difficulty);
 
-	CoinManager manejador(mapa1,*senyor);
+
+	CoinManager manejador(mapa1);
+
+	Player senyor(mapa1, manejador);
+
+	mapa1.printer();
 
 	
 
-	senyor = new Player(mapa1,manejador);
-
-	mapa1.printer(scoreToWin);
-
-	
-
-	while(senyor*.puntuacio < scoreToWin) {
+	while(senyor.puntuacio < scoreToWin) {
 					
 			
-			if (senyor*.movement(mapa1, manejador, scoreToWin)) {
-				manejador.scoreCounter();
+			if (senyor.movement()) {
 
-				mapa1.cellModify(senyor*.x, senyor*.y, '@');
+				senyor.scoreCounter();
 
-				mapa1.printer(scoreToWin);
+				mapa1.cellModify(senyor.x, senyor.y, '@');
+
+				mapa1.printer();
 
 
 				std::cout << std::endl << std::endl;
-				std::cout << senyor*.puntuacio << "/" << scoreToWin << std::endl;
+				std::cout << senyor.puntuacio << "/" << scoreToWin << std::endl;
 			}
 	};
 

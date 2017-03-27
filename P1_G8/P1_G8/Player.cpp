@@ -15,7 +15,7 @@ Player::Player(Map &mapa, CoinManager &manejador) : map (mapa), coinmanager(mane
 	mapa.cellModify(x, y, '@');
 
 }
-bool Player::movement(Map &mapa) {
+bool Player::movement() {
 
 	char entrada;
 	if (_kbhit()) {
@@ -26,13 +26,13 @@ bool Player::movement(Map &mapa) {
 		case 'a':
 		case 'A':
 			if (y == 0) {
-				y == mapa.sizey;
+				y == map.sizey;
 			}
 			else { y--;}	break;
 
 		case 'd':
 		case 'D':
-			if (y == mapa.sizey) {
+			if (y == map.sizey) {
 				y == 0;
 			}
 			else { y++; }	break;
@@ -40,13 +40,13 @@ bool Player::movement(Map &mapa) {
 		case 'w':
 		case 'W':
 			if (x == 0) {
-				x == mapa.sizey;
+				x == map.sizey;
 			}
 			else { x--; }	break;
 
 		case 's':
 		case 'S':
-			if (x == mapa.sizex) {
+			if (x == map.sizex) {
 				x == 0;
 			}
 			else { x++; }	break;
@@ -62,21 +62,18 @@ bool Player::movement(Map &mapa) {
 
 }
 
-void Player::scoreadd() {
 
-	puntuacio++;
-}
 
-void Player::scoreCounter(Map &mapa, CoinManager &manejador, int coinnum) {
+void Player::scoreCounter() {
 
-	if (mapa.map[x][y] == '$') {
+	if (map.map[x][y] == '$') {
 		puntuacio++;
-		coinnum--;
+		coinmanager.coinnum--;
 	}
 
-	if (coinnum == 0) {
-		coinnum = mapa.sizex*mapa.sizey * int(float(rand() % 100) / 1000.f + 0.03f);
-		manejador.coinsetter();
+	if (coinmanager.coinnum == 0) {
+		coinmanager.coinnum = map.sizex*map.sizey * int(float(rand() % 100) / 1000.f + 0.03f);
+		coinmanager.coinsetter();
 	}
 
 }

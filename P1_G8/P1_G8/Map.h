@@ -17,12 +17,12 @@ public:
 
 	int sizey; // alçada del mapa
 
-	Map(int difficulty, Player jugador);
+	Map(int difficulty);
 
 	void cellModify(const int &line, const int &row, const char &newelement);
 
 
-	void printer( int scoreToWin);
+	void printer();
 
 
 
